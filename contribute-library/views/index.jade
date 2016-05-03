@@ -1,0 +1,96 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js')
+    script(src='https://cdn.socket.io/socket.io-1.2.0.js')
+
+  script.
+    var Range = require('ace/range').Range;
+    var something = function() {
+      var str = document.getElementById('str').value;
+      var c = 0;
+      var strPos = 0;
+      var docCol = 0;
+      var docRow = 0;
+      (function myLoop (i) {          
+        setTimeout(function () { 
+          var editor = ace.edit("editor1");
+          var randomnumber = Math.floor(Math.random()*3);
+          var randomRow = Math.floor(Math.random() * editor.session.getDocument().getLength());
+          var randomColumn = Math.floor(Math.random() * editor.session.getDocument().$lines[randomRow].length)
+          var pos = {};
+          pos["column"] = randomColumn;
+          pos["row"] = randomRow;
+          if (str == "") {
+            if(randomnumber === 0  && c % 5 == 0){
+              editor.session.getDocument().insertMergedLines(pos, ["",""]);
+              c++;
+            }
+            if(randomnumber === 1 && c % 5 == 0){ 
+              if(randomRow > 0) {           
+                var r = new Range(randomRow-1, 0, randomRow, randomColumn);
+                editor.session.getDocument().remove(r);
+                c++;
+              }
+              else {
+                var r = new Range(randomRow, 0, randomRow, randomColumn);
+                editor.session.getDocument().remove(r);
+                c++;
+              }
+            }
+            if(randomnumber === 2){
+              var ch = Math.random().toString(36).substring(2, 3);
+              editor.session.getDocument().insert(pos, ch);
+              c++;
+            }
+          } 
+          else {
+              var pos = {};
+              pos["column"] = docCol;
+              pos["row"] = docRow;
+              var chAtPos = str.charAt(strPos);
+              editor.session.getDocument().insert(pos, chAtPos);
+              strPos++;
+              docCol++;
+              if(str.length < strPos) {
+                editor.session.getDocument().insertMergedLines(pos, ["",""]);
+                strPos = 0;
+                docRow++;
+                docCol = 0;
+              }
+          }  
+          if (--i) myLoop(i);      
+         },100 )  //delay
+      })(500); //count
+    }
+
+  body
+    div#head
+      a(href='#')
+        img(src='/img/logo.png')
+      div#headnavi
+        ul
+          li
+            form
+              input(name="id" type="text" placeholder="E-Mail eingeben")
+              input(id="loginbtn" class="btn" type="button" value="Login" onClick="pasuser(this.form)")
+              input(id="logoutbtn" class="btn" type="button" value="Logout" onClick="logout(this.form)")
+          li
+            img(src="/img/login-red.png")
+    div#navi
+      form
+        input(id="str" class="textfield" type="text" placeholder="String eingeben")
+        input(id="loginbtn" class="btn" type="button" value="Simulieren" onClick="something()")   
+    div#user           
+    div#editor1
+    
+  script(src='/javascripts/cOperation.js')
+  script(src='/javascripts/client.js')
+//
+  script().
+    var socket = io();
+    var editor = ace.edit("editor1");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");

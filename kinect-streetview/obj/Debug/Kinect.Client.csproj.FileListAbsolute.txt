@@ -1,0 +1,10 @@
+C:\Users\v-vapter\My Projects\Microsoft\ENGAGE\KinectHtml5\Kinect.Client\bin\Kinect.Client.dll
+C:\Users\v-vapter\My Projects\Microsoft\ENGAGE\KinectHtml5\Kinect.Client\bin\Kinect.Client.pdb
+C:\Users\v-vapter\My Projects\Microsoft\ENGAGE\KinectHtml5\Kinect.Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\v-vapter\My Projects\Microsoft\ENGAGE\KinectHtml5\Kinect.Client\obj\Debug\Kinect.Client.dll
+C:\Users\v-vapter\My Projects\Microsoft\ENGAGE\KinectHtml5\Kinect.Client\obj\Debug\Kinect.Client.pdb
+C:\Users\v-vapter\My Projects\KinectHtml5\Kinect.Client\bin\Kinect.Client.dll
+C:\Users\v-vapter\My Projects\KinectHtml5\Kinect.Client\bin\Kinect.Client.pdb
+C:\Users\v-vapter\My Projects\KinectHtml5\Kinect.Client\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\v-vapter\My Projects\KinectHtml5\Kinect.Client\obj\Debug\Kinect.Client.dll
+C:\Users\v-vapter\My Projects\KinectHtml5\Kinect.Client\obj\Debug\Kinect.Client.pdb

@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    	<link rel="stylesheet" type="text/css" href="appearance.css" />
+		<meta name="author" content="Christoph Franke">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>MME 2 &Uuml;bung 2</title>
+        
+        <!-- JQuery -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        
+        <!-- controller -->
+        <script type="text/javascript" src="sequence_editor.js"></script>
+        <script type="text/javascript" src="interface.js"></script>
+
+    </head>
+    <body>    	
+    	<canvas id="editorCanvas" width="1000" height="600"> </canvas>  	
+    	<div id="menu">
+    		<label id="loginLabel">not logged in</label>
+    		<a href="" title="change login" id="login">change</a>
+    		<br><br>
+    		User Scenes<br>    		
+			<select id="sequenceSelect" size="5" style="width: 290px"></select>	
+			<br>
+			<button type="button" id="newButton">create</button>
+			<button type="button" id="loadButton">load</button>
+			<button type="button" id="saveButton">save</button>
+			<button type="button" id="renameButton">rename</button>
+			<button type="button" id="deleteButton">delete</button>		
+			<br><br>
+			<button type="button" id="loadIDButton">load ID</button>
+			<br><br>
+			Edit Sequence<br>			
+    		<button type="button" id="createButton">new Container</button>
+    		<input type="checkbox" id="showGrid">show grid
+    		<br>
+			<button type="button" id="clearButton">clear Sequence</button>
+			<br><br>
+			<div id = "pictureList">
+			</div>
+	    	</div>
+    </body>
+</html>

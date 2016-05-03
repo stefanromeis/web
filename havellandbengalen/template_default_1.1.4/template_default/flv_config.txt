@@ -1,0 +1,1 @@
+flv=http%3A//flv-player.net/medias/KyodaiNoGilga.flv width=250 height=180 loadingcolor=3399cc buttoncolor=3399cc slidercolor1=3399cc slidercolor2=1177aa sliderovercolor=ffffff showstop=1 showvolume=1 showtime=1 
