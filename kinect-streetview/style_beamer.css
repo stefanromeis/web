@@ -1,0 +1,123 @@
+﻿﻿* {
+	margin:0px;
+	padding:0px;
+}
+
+html, body {
+    background: #eee;
+    font-family: Segoe UI, Helvetica Neue, Arial, Sans-Serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+     width:100%;
+     height:100%;
+}
+
+h1 {
+    font-family: Segoe UI Light, Segoe UI, Helvetica Neue, Arial, Sans-Serif;
+    font-weight: normal;
+}
+
+#canvas {
+	margin:10px;
+	z-index:2;
+	position:absolute;
+	right:0%;
+	width: 500px;
+	height:	350px;
+	background-color:#000;
+	opacity:0.7;
+	box-shadow: 10px 20px 30px #000;}
+
+#pano {
+	width: 100%; 				
+	height: 2200px; /* Beamer = 2200px */
+ 	z-index:1;
+}
+#map-canvas {
+	bottom:0px;
+	right:0px;
+	position:absolute;
+	width: 500px; 
+	height: 400px;
+	z-index:2;
+	opacity:0.8;
+	margin:0 10px 10px 0;
+}
+#info {
+	width:2000px; /* Beamer = 2000px */
+	position:absolute;
+	left:50%;
+	margin-top:10px;
+	margin-left:-1000px; /* Beamer = -1000px */
+	text-align:center;
+	z-index:3;
+	font-size:30pt; /* Beamer = 30pt */
+	color:#ccc;
+	background-color:#000;
+	opacity:0.7;
+	padding-bottom:5px;
+	box-shadow: 10px 10px 10px #000;
+}
+
+#hint, #hint2 {
+	padding:10px;
+	margin: 0 0 10px 10px;
+	position:absolute;
+	background-color:#000;
+	font-size:20px;
+	font-weight:bold;
+	color:#800;
+	width:600px;
+	height:500px;
+	left:0%;
+	bottom:0%;
+	z-index:2;
+	opacity:0.8;
+}
+
+#legende1, #legende2 {
+	position:absolute;
+	width:500px;
+	height:500px;
+	z-index:2;
+	top:0%;
+	right:0%;
+	margin:450px 10px 0 0;
+	background-color:#fff;
+	opacity:0.7;
+}
+#legende1 p, #legende2 p {
+	background-color:#fff;
+	opacity:0.7;
+	padding:0 10px 10px 40px;
+	color:#444;
+	font-weight:bold;
+	font-size:40px;
+}
+
+#pac-input {
+    background-color: #fff;
+    padding: 0 11px 0 13px;
+    width: 145px;
+    font-family: Roboto;
+    font-size: 15px;
+    text-overflow: ellipsis;
+	margin-top:7px;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+    margin-left: -1px;
+    padding-left: 14px;  /* Regular padding-left + 1. */
+    width: 145px;
+}
+
+.pac-container {
+    font-family: Roboto;
+}
+
+

@@ -1,0 +1,118 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw12240\paperh15840\vieww21780\viewh14440\viewkind0
+\deftab720
+\pard\pardeftab720\sl276\slmult1\sa200
+
+\f0\fs40 \cf0 Sequence Editor API\
+
+\fs22 Die REST API des Sequence Editors stellt Zugriff auf die Datenbank mit gespeicherten Szenen mittels GET, POST, PUT und DELETE Routen zur Verf\'fcgung.\
+
+\fs28 Abrufen gespeicherter Szenen\
+
+\fs22 GET-Route api/sequences/
+\i id
+\i0  \
+\pard\pardeftab720\li720\fi-360\sl276\slmult1\sa200
+\cf0 Um einzelne Szenen abzufragen, kann die api mit \'dcbergabe der gew\'fcnschten ID Nummer angesprochen werden.\
+Als R\'fcckgabe erh\'e4lt man einen JSON String mit ID, Szenename und einem JSON String, der die Elemente und Linien der entsprechenden Szene beinhaltet\
+m\'f6gliche Fehlermeldung: \
+\pard\pardeftab720\li360\sl276\slmult1\sa200
+\cf0 	error 
+\b 404
+\b0 , wenn Szene mit \'fcbergebener ID nicht in Datenbank vorhanden\
+\pard\pardeftab720\li720\fi-360\sl276\slmult1\sa200
+\cf0 Beispiel: api/sequences/7\
+\pard\pardeftab720\sl276\slmult1\sa200
+\cf0 	R\'fcckgabe
+\i : \{id: "7", email: "max.mustermann@muster.de", json:\'93\{\'84coords\'93 \'85\}
+\i0 \
+GET-Route api/sequences
+\i ?email 
+\i0 \
+\pard\pardeftab720\li720\fi-360\sl276\slmult1\sa200
+\cf0 Um alle Szenen eines Nutzers abzufragen, kann seine Email Adresse als Parameter \'fcbergeben werden.\
+Als R\'fcckgabe erh\'e4lt man eine Liste mit JSON Strings mit allen IDs, Namen und JSON Strings, die die Elemente und Linien aller vom Benutzer gespeicherten Szenen beinhalten\
+Beispiel: api/sequences?max.mustermann@muster.de\
+\pard\pardeftab720\sl276\slmult1\sa200
+\cf0 	R\'fcckgabe [
+\i \{id: "1", email: "max.mustermann@muster.de", json:\'93\{\'84coords\'93: \'85.\}]
+\i0 \
+
+\fs28 \
+Aktualisieren von Szenen
+\fs22 \
+PUT-Route api/sequences/
+\i id\
+\pard\pardeftab720\li720\fi-360\sl276\slmult1\sa200
+
+\i0 \cf0 Um eine in der Datenbank bestehende Szene zu aktualisieren, muss als Parameter ein JSON String \'fcbergeben werden, der Name, EMail und den JSON String mit den Elementen und Linien der Szene beinhaltenkann\
+\'dcberschreibt bestehende Daten der Szene in der Datenbank.\
+Als R\'fcckgabe erh\'e4lt man den aktualisierten Eintrag in der Datenbank als JSON String\
+m\'f6gliche Fehlermeldung: 			\
+\pard\pardeftab720\sl276\slmult1\sa200
+\cf0 	error 
+\b 404
+\b0 , wenn Szene mit \'fcbergebener ID nicht in Datenbank vorhanden\
+\pard\pardeftab720\li720\fi-360\sl276\slmult1\sa200
+\cf0 Beispiel: api/sequences/7\
+\pard\pardeftab720\sl276\slmult1\sa200
+\cf0 	POST Parameter:
+\i  \{"name":"Szene2"\}\
+	
+\i0 R\'fcckgabe
+\i : \{id: "7", email: "max.mustermann@muster.de", json:\'93\{\'84coords\'93\'85. \}
+\i0 \
+\
+
+\fs28 Eintragen von Szenen\
+
+\fs22 POST-Route api/sequences\
+\pard\pardeftab720\li720\fi-360\sl276\slmult1\sa200
+\cf0 Um eine neue Szene in die Datenbank einzutragen, muss als Parameter ein JSON String \'fcbergeben werden, der sowohl Name und E-Mail als auch den JSON String mit den Elementen und Linien der Szene beinhalten muss\
+F\'fcr den neuen Eintrag wird automatisch eine neue ID angelegt.\
+Als R\'fcckgabe erh\'e4lt man den neuen Eintrag in der Datenbank als JSON String\
+m\'f6gliche Fehlermeldung: 			\
+\pard\pardeftab720\sl276\slmult1\sa200
+\cf0 	error 
+\b 400
+\b0 , wenn nicht alle ben\'f6tigten Parameter (name, json, email) \'fcbergeben 	wurden\
+\pard\pardeftab720\li720\fi-360\sl276\slmult1\sa200
+\cf0 Beispiel: api/sequences\
+\pard\pardeftab720\sl276\slmult1\sa200
+\cf0 	POST Parameter:
+\i  \{"email":"max.mustermann@muster.de","json":"...",        	"name":"Szene50"\}\
+	
+\i0 R\'fcckgabe
+\i : \{id: "27", "email":"max.mustermann@muster.de","json":"...",        	"name":"Szene50"\}\
+
+\i0 \
+
+\fs28 L\'f6schen bestehender Szenen
+\fs22 \
+DELETE-Route api/sequences/
+\i id\
+\pard\pardeftab720\li720\fi-360\sl276\slmult1\sa200
+
+\i0 \cf0 Um eine in der Datenbank bestehende Szene zu l\'f6schen, kann die api mit \'dcbergabe der zu l\'f6schenden ID Nummer angesprochen werden.\
+Als R\'fcckgabe erh\'e4lt man 
+\i true
+\i0 , wenn die Szene erfolgreich gel\'f6scht wurde\
+m\'f6gliche Fehlermeldung: 			\
+\pard\pardeftab720\sl276\slmult1\sa200
+\cf0 	error 
+\b 404
+\b0 , wenn Szene mit \'fcbergebener ID nicht in Datenbank vorhanden\
+\pard\pardeftab720\li720\fi-360\sl276\slmult1\sa200
+\cf0 Beispiel: api/sequences/7
+\i \
+\pard\pardeftab720\sl276\slmult1\sa200
+\cf0 	
+\i0 R\'fcckgabe
+\i : true
+\i0 \
+\
+\
+	\
+}

@@ -1,0 +1,209 @@
+* {
+	margin:0px;
+	padding:0px;
+}
+
+html, body {
+    background: #eee;
+    font-family: Segoe UI, Helvetica Neue, Arial, Sans-Serif;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    color: #eee;
+}
+
+#wrapper {
+     width:100%;
+     height:100%;
+     overflow:hidden;
+}
+
+h1 {
+    font-family: Segoe UI Light, Segoe UI, Helvetica Neue, Arial, Sans-Serif;
+    font-weight: normal;
+}
+
+#canvas {
+	margin:10px;
+	z-index:2;
+	position:absolute;
+	right:0%;
+	width: 320px;
+	height:	240px;
+	opacity:0.7;
+	overflow:hidden;
+    background-image:url(images/gui/skelett.png);
+}
+
+#pano {
+	width: 100%; 				
+	height: 730px; /* PC = 900px */
+ 	z-index:2;
+	overflow:hidden;
+}
+#map-canvas {
+	bottom:0px;
+	right:0px;
+	position:absolute;
+	width: 310px; 
+	height: 230px;
+	z-index:2;
+	opacity:0.8;
+}
+#info {
+	width:700px; /* Beamer = 2000px */
+	position:absolute;
+	left:50%;
+	margin-top:10px;
+	margin-left:-300px; /* Beamer = -1000px */
+	text-align:center;
+	z-index:3;
+	font-size:16pt; /* Beamer = 30pt */
+	color:#fff;
+    text-shadow: 0 0 20px black;
+}
+
+#blink {
+	padding:10px;
+	margin: 0 0 10px 10px;
+	position:absolute;
+	background-color:#000;
+	color:#aaa;
+	width:180px;
+	left:0%;
+	top:200px;
+	z-index:3;
+	opacity:0.8;
+	border-radius:10px;
+    display: none;
+    -webkit-animation: blink 400ms infinite alternate;
+    -moz-animation: blink 400ms infinite alternate;
+    -o-animation: blink 400ms infinite alternate;
+    animation: blink 400ms infinite alternate;
+}
+
+#blink img {
+    padding: 8px;
+    display:none;
+    background-color: #333;
+}
+
+#icons {
+    margin-top: 8px;
+    background-color: #222;
+}
+
+#pac-input {
+    background-color: #fff;
+    padding: 0 11px 0 13px;
+    width: 145px;
+    font-family: Roboto;
+    font-size: 15px;
+    text-overflow: ellipsis;
+	margin-top:7px;
+}
+
+#pac-input:focus {
+    border-color: #4d90fe;
+    margin-left: -1px;
+    padding-left: 14px;  /* Regular padding-left + 1. */
+    width: 145px;
+}
+
+.pac-container {
+    font-family: Roboto;
+}
+
+menu {
+    position:absolute;
+    width:300px;
+    display:none;
+    background-color:#e85958;
+    padding:30px;
+    z-index:3;
+    top:100px;
+    left:500px;
+    border: 5px solid #eee;
+    border-radius:10px;
+}
+.checkboxen {
+    font-size:12px;
+}
+#navi button {
+    color: #ddd;
+    width:200px;
+    height:30px;
+    z-index:5;
+    bottom:10px;
+    left:10px;
+    position:absolute;
+    background-color: #000;
+    opacity: 0.95;
+    border-radius: 5px;
+}
+#navi button:hover {
+    color: #fff;
+    width: 200px;
+    height:30px;
+    z-index:5;
+    bottom:10px;
+    left:10px;
+    position:absolute;
+    background-color:#e85958;
+    opacity: 1;
+    cursor: pointer;  
+    border-radius: 5px;
+}
+#user {
+    font-family:sans-serif;
+    font-size: 12px;
+}
+#user a {
+    text-decoration: none;
+    color: #acc;
+}	
+#user a:hover {
+    color: #fff;
+    text-decoration: underline; 
+}	
+select  {
+    background-color: #fff;
+    color: grey;
+    font-weight: bold;
+    padding: 11px;
+    border: none;
+}
+#control button {
+    padding: 5px;
+    margin:10px 0 0 5px;
+    font-weight: bold;
+    color: #eee;
+    background-color: #e85958;
+    border: 1px solid #fff;
+}
+#control button:hover {
+    padding: 5px;
+    margin:10px 0 0 5px;
+    font-weight: bold;
+    color: #e85958;
+    background-color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
+
+@-webkit-keyframes blink {
+	from { background-color:#f00; }
+	to { background-color:#fff; }
+}
+@-o-keyframes blink {
+	from { background-color:#f00; }
+	to { background-color:#fff; }
+}
+@-moz-keyframes blink {
+	from { background-color:#f00; }
+	to { background-color:#fff; }
+}
+@keyframes blink {
+	from { background-color:#f00; }
+	to { background-color:#fff; }
+};
